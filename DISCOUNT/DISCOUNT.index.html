@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Lucky Number</h1>
+    <p>Enter your lucky number below and click the button to check if you're lucky!</p>
+    <input type="number" id="luckyNumber" placeholder="Enter a number">
+    <button onclick="checkLuckyNumber()">Click Here</button>
+    <div id="result"></div>
+
+    <script>
+        function checkLuckyNumber() {
+            const luckyNumbers = [1, 41, 11, 22];
+            const userInput = parseInt(document.getElementById('luckyNumber').value);
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Clear previous result
+
+            if (luckyNumbers.includes(userInput)) {
+                const img = document.createElement('img');
+                img.src = 'lucky.png'; // Ensure "lucky.png" is uploaded
+                img.alt = 'Lucky Picture';
+                resultDiv.appendChild(img);
+            } else {
+                resultDiv.textContent = 'Sorry, this is not a lucky number.';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number to Picture</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter Your Lucky Number </h1>
+  <input type="number" id="numberInput" placeholder="Enter a number">
+  <button onclick="showPicture()">Show Picture</button>
+  <div id="imageContainer"></div>
+
+  <script>
+    function showPicture() {
+      // Get the input number
+      const number = document.getElementById('numberInput').value;
+
+      // Define the mapping of numbers to image URLs
+      const imageMapping = {
+        1: 'https://via.placeholder.com/300?text=Image+1',
+        2: 'https://via.placeholder.com/300?text=Image+2',
+        3: 'https://via.placeholder.com/300?text=Image+3',
+        // Add more mappings as needed
+      };
+
+      // Get the image container
+      const imageContainer = document.getElementById('imageContainer');
+
+      // Check if the number has a corresponding image
+      if (imageMapping[number]) {
+        // Display the image
+        imageContainer.innerHTML = `<img src="lucky.PNG" alt="Picture for number ${1447,1555}">`;
+      } else {
+        // Show a message if no image is found
+        imageContainer.innerHTML = '<p>No picture available for this number.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
